@@ -2,20 +2,51 @@ class ItemsController < ApplicationController
 
 
 def index
-    @items = Item.all
-  end
 
-  def show
-  end
+		@item = Item.all
 
-  def new
+		render :index
 
-    @item = Item.new
-    
-  end
+	end 
 
-  def edit
+	def new 
 
-  end
+		@item = Item.new # the html will have access to the blank employee
+
+		render :new
+
+	end
+
+	def create 
+
+		@item = Item.new(item_params) # create a new employee but use the new params 
+
+		if(@item.save)
+			redirect_to "/" # redirect to the index page once created
+		end
+
+	end 
+
+	def edit 
+		id = params[:id]
+		@item = Item.find(id)
+
+		render :edit
+	end 
+
+	def show
+
+
+		@item = Item.find(params[:id].to_i)
+		render :show
+
+	end
+
+	def item_params
+
+		params.require(:item).permit(:id, :serial_number, :description, :supplier, :status, :lender) # grab the params and have access to the stuff
+
+	end
+
 
 end
