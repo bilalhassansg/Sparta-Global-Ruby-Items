@@ -1,0 +1,26 @@
+<%=form_for(@item) do |f| %>
+
+      <!-- does the same thing as line 21 and 22 // Takes the name input-->
+  <p> 
+    <%=f.label :serial_number%><br>
+    <%=f.text_field :serial_number%><br>
+  </p>
+  <p> 
+    <%=f.label :description%><br>
+    <%=f.text_field :description%><br>
+  </p>
+  <p> 
+    <%=f.label :supplier%><br>
+    <%=f.text_field :supplier%><br>
+  </p>
+  <p> 
+    <%=f.label :status%><br>
+    <%=f.text_field :status%><br>
+  </p>
+  <p> 
+    <%=f.label :lender%><br>
+    <%=f.text_field :lender%><br>
+  </p>
+  <%=f.submit%>
+
+<%end%>
