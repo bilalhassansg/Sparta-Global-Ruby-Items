@@ -1,0 +1,27 @@
+
+  <strong>Serial number:</strong>
+  <%= @item.serial_number %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @item.supplier %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @item.status %>
+</p>
+
+<p>
+  <strong>Lender:</strong>
+  <%= @item.lender %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

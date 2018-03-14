@@ -1,0 +1,30 @@
+<%=form_for(@item) do |form| %>
+
+
+<div>
+    <%= form.label :serial_number %>
+    <%= form.text_field :serial_number, id: :item_serial_number %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :item_description %>
+  </div>
+
+  <div>
+    <%= form.label :supplier %>
+    <%= form.text_field :supplier, id: :item_supplier %>
+  </div>
+
+  <div>
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :item_status %>
+  </div>
+
+  <div>
+    <%= form.label :lender %>
+    <%= form.text_field :lender, id: :item_lender %>
+  </div>
+
+  <div>
+    <%= form.submit %>
