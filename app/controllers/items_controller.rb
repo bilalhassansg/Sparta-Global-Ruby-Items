@@ -19,7 +19,7 @@ def index
 
 	def create 
 
-		@item = Item.new(item_params) # create a new employee but use the new params 
+		@item = Item.new(item_params) # create a new index but use the new params 
 
 		if(@item.save)
 			redirect_to "/" # redirect to the index page once created
@@ -45,6 +45,27 @@ def index
 	def item_params
 
 		params.require(:item).permit(:id, :serial_number, :description, :supplier, :status, :lender) # grab the params and have access to the stuff
+
+	end
+
+	def update 
+
+		id = params[:id]
+		@item = Item.find(id)
+
+		@item.update(item_params)
+
+		redirect_to "/"
+
+
+	end 
+
+	def destroy
+
+		id = params[:id]
+		@item = Item.find(id)
+
+		@item.delete
 
 	end
 
